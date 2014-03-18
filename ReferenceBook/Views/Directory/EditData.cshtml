@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Edit Data";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model ReferenceBook.Models.Person
+@section edition{
+
+
+@using (Html.BeginForm("EditData", "Directory", FormMethod.Post, new { id = "PersonForm" }))
+{
+    
+        @Html.HiddenFor(m => m.Id)
+        <p>
+            @Html.LabelFor(m => m.FirstName, "First Name")
+            <br />
+            @Html.EditorFor(m => m.FirstName)
+             @Html.ValidationMessageFor(m => m.FirstName)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.LastName, "Last Name")
+            <br />
+            @Html.EditorFor(m => m.LastName)
+             @Html.ValidationMessageFor(m => m.LastName)
+ 
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Tel, "Telephone")
+            <br />
+            @Html.EditorFor(m => m.Tel)
+             @Html.ValidationMessageFor(m => m.Tel)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Additional_Information, "Additional Information")
+            <br />
+            @Html.EditorFor(m => m.Additional_Information)
+             @Html.ValidationMessageFor(m => m.Additional_Information)
+        </p>
+        <p><input type="submit" value="Send" />@Html.ActionLink("Return to the Directory","ShowData","Directory")</p>
+
+}
+}

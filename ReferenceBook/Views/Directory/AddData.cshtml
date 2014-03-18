@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "Add Data";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model ReferenceBook.Models.Person
+@section adding{
+ 
+    @using (Html.BeginForm("AddData", "Directory", FormMethod.Post, new { id = "PersonForm" }))
+{ 
+        
+        <p>
+            @Html.LabelFor(m => m.FirstName, "First Name")
+            <br />
+            @Html.TextBoxFor(m => m.FirstName)
+            @Html.ValidationMessageFor(m => m.FirstName)
+          
+        </p>
+        <p>
+            @Html.LabelFor(m => m.LastName, "Last Name")
+            <br />
+            @Html.TextBoxFor(m => m.LastName)
+            @Html.ValidationMessageFor(m => m.LastName)
+ 
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Tel, "Telephone")
+            <br />
+            @Html.TextBoxFor(m => m.Tel)
+            @Html.ValidationMessageFor(m => m.Tel)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Additional_Information, "Additional Information")
+            <br />
+            @Html.TextBoxFor(m => m.Additional_Information)
+            @Html.ValidationMessageFor(m => m.Additional_Information)
+        </p>
+        <p><input type="submit" value="Send" /> @Html.ActionLink("Return to the Directory","ShowData","Directory")</p>
+  
+}
+}
+    
+    
+
+
