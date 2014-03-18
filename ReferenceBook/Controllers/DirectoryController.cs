@@ -41,8 +41,7 @@ namespace ReferenceBook.Controllers
 
                 if (ModelState.IsValid)
                 {
-                    IEnumerable<Person> persons = db.Persons;
-                    ViewBag.Persons = persons.ToList();
+
                     db.Entry(person).State = EntityState.Added;
                     db.SaveChanges();
                     return RedirectToAction("ShowData");
